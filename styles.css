@@ -1,0 +1,96 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    background-image: url('b1.jpg');
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #008CBA; /* Blue background */
+    border: none;
+    color: white; /* White text */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 5px #666;
+}
+
+.btn:hover {
+    background-color: #005f73; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.btn:active {
+    background-color: #004f5a; /* Even darker blue when clicked */
+    box-shadow: 0 3px #666;
+    transform: translateY(2px); /* Press effect when clicked */
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background-image: url('b1.jpg'); /* Replace with your image path */
+    background-size: cover;
+    padding: 10px;
+    border: 5px solid #000;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: 2px solid #000;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
+.cell.x, .cell.o {
+    animation: appear 0.3s ease-in-out;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cell.x {
+    color: red;
+}
+
+.cell.o {
+    color: blue;
+}
